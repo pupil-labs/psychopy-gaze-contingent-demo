@@ -78,14 +78,15 @@ def main():
 
 
     # Pull scene camera serial to fetch accurate camera intrinsics
-    if not device.serial_number_scene_cam:
+    camera_serial = device.module_serial or device.serial_number_scene_cam
+    if not camera_serial:
         status_label.text = "Scene camera not connected. Exiting..."
         window.flip()
         device.close()
         time.sleep(2)
         raise SystemExit(-2)
 
-    camera = cloud_api.camera_for_scene_cam_serial(device.serial_number_scene_cam)
+    camera = cloud_api.camera_for_scene_cam_serial(camera_serial)
     gaze_mapper = GazeMapper(camera)
 
 
