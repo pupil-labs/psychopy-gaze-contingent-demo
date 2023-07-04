@@ -1,4 +1,4 @@
 PsychoPy
 numpy
 pupil-labs-realtime-api
-git+ssh://git@github.com/pupil-labs/realtime-screen-gaze
+git+https://github.com/pupil-labs/realtime-screen-gaze
