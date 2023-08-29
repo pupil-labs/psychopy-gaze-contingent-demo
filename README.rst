@@ -1,7 +1,7 @@
 =============================
 PsychoPy Gaze Contingent Demo
 =============================
-This demo application of the `Real-time Screen Gaze <https://github.com/pupil-labs/real-time-screen-gaze/>`_ package is an example of how to apply screen-based gaze coordinates in a PsychoPy experiment using one's eyes. You will need an eyetracking device from Pupil Labs, such as the `Neon <https://pupil-labs.com/products/neon/>`_.
+This demo shows how to leverage `Neon <https://pupil-labs.com/products/neon/>`_ and the `Real-time Screen Gaze <https://github.com/pupil-labs/real-time-screen-gaze/>`_ package to obtain and use screen-based gaze coordinates in a gaze-contingent experiment using `PsychoPy <https://www.psychopy.org/>`_.
 
 ===================
 Dependencies
