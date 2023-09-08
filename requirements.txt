@@ -1,4 +1,0 @@
-PsychoPy
-numpy
-pupil-labs-realtime-api
-git+https://github.com/pupil-labs/real-time-screen-gaze
