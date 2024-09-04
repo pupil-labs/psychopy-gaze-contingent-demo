@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2024.1.5">
+<PsychoPy2experiment encoding="utf-8" version="2024.2.1">
   <Settings>
-    <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
+    <Param val="0" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
     <Param val="" valType="str" updates="None" name="Completed URL"/>
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
@@ -20,13 +20,13 @@
     <Param val="False" valType="bool" updates="None" name="Save hdf5 file"/>
     <Param val="True" valType="bool" updates="None" name="Save log file"/>
     <Param val="True" valType="bool" updates="None" name="Save psydat file"/>
-    <Param val="True" valType="bool" updates="None" name="Save wide csv file"/>
+    <Param val="False" valType="bool" updates="None" name="Save wide csv file"/>
     <Param val="1" valType="num" updates="None" name="Screen"/>
     <Param val="False" valType="bool" updates="None" name="Show info dlg"/>
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
     <Param val="height" valType="str" updates="None" name="Units"/>
     <Param val="" valType="str" updates="None" name="Use version"/>
-    <Param val="[2560, 1440]" valType="list" updates="None" name="Window size (pixels)"/>
+    <Param val="[1470, 956]" valType="list" updates="None" name="Window size (pixels)"/>
     <Param val="none" valType="str" updates="None" name="backgroundFit"/>
     <Param val="" valType="str" updates="None" name="backgroundImg"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
@@ -34,6 +34,8 @@
     <Param val="{'thisRow.t': 'priority.CRITICAL', 'expName': 'priority.LOW'}" valType="dict" updates="None" name="colPriority"/>
     <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
     <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+    <Param val="warning" valType="code" updates="None" name="consoleLoggingLevel"/>
+    <Param val="default" valType="str" updates="None" name="ecSampleRate"/>
     <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
     <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
     <Param val="FILTER_LEVEL_OFF" valType="str" updates="None" name="elLiveFiltering"/>
@@ -52,7 +54,7 @@
     <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
     <Param val="4242" valType="num" updates="None" name="gpPort"/>
     <Param val="ioHub" valType="str" updates="None" name="keyboardBackend"/>
-    <Param val="exp" valType="code" updates="None" name="logging level"/>
+    <Param val="debug" valType="code" updates="None" name="logging level"/>
     <Param val="False" valType="bool" updates="None" name="measureFrameRate"/>
     <Param val="('MIDDLE_BUTTON',)" valType="list" updates="None" name="mgBlink"/>
     <Param val="CONTINUOUS" valType="str" updates="None" name="mgMove"/>
@@ -87,6 +89,7 @@
         <Param val="" valType="str" updates="constant" name="desc"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
         <Param val="Cleanup" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
@@ -95,16 +98,17 @@
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
       <EyetrackerRecordComponent name="StopRecording" plugin="None">
-        <Param val="Start and Stop" valType="str" updates="None" name="actionType"/>
-        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="Stop Only" valType="str" updates="None" name="actionType"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="StopRecording" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="constant" name="stopWithRoutine"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
       </EyetrackerRecordComponent>
       <TextComponent name="finish_text" plugin="None">
@@ -112,6 +116,7 @@
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="None" valType="str" updates="constant" name="flip"/>
         <Param val="Arial" valType="str" updates="constant" name="font"/>
@@ -143,6 +148,7 @@
         <Param val="" valType="str" updates="constant" name="desc"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
         <Param val="Init" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
@@ -150,96 +156,47 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
-      <VariableComponent name="tag_size" plugin="None">
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="tag_size" valType="code" updates="None" name="name"/>
-        <Param val="False" valType="bool" updates="constant" name="saveEndExp"/>
-        <Param val="True" valType="bool" updates="constant" name="saveEndRoutine"/>
-        <Param val="never" valType="str" updates="constant" name="saveFrameValue"/>
-        <Param val="False" valType="bool" updates="constant" name="saveStartExp"/>
-        <Param val="False" valType="bool" updates="constant" name="saveStartRoutine"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="0.2" valType="code" updates="constant" name="startExpValue"/>
-        <Param val="" valType="code" updates="None" name="startFrameValue"/>
-        <Param val="" valType="code" updates="constant" name="startRoutineValue"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
-      </VariableComponent>
-      <VariableComponent name="target_size" plugin="None">
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="target_size" valType="code" updates="None" name="name"/>
-        <Param val="False" valType="bool" updates="constant" name="saveEndExp"/>
-        <Param val="True" valType="bool" updates="constant" name="saveEndRoutine"/>
-        <Param val="never" valType="str" updates="constant" name="saveFrameValue"/>
-        <Param val="False" valType="bool" updates="constant" name="saveStartExp"/>
-        <Param val="False" valType="bool" updates="constant" name="saveStartRoutine"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="0.1" valType="code" updates="constant" name="startExpValue"/>
-        <Param val="" valType="code" updates="None" name="startFrameValue"/>
-        <Param val="" valType="code" updates="constant" name="startRoutineValue"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
-      </VariableComponent>
-      <VariableComponent name="window_aspect" plugin="None">
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="window_aspect" valType="code" updates="None" name="name"/>
-        <Param val="False" valType="bool" updates="constant" name="saveEndExp"/>
-        <Param val="True" valType="bool" updates="constant" name="saveEndRoutine"/>
-        <Param val="never" valType="str" updates="constant" name="saveFrameValue"/>
-        <Param val="False" valType="bool" updates="constant" name="saveStartExp"/>
-        <Param val="False" valType="bool" updates="constant" name="saveStartRoutine"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="win.size[0]/win.size[1]" valType="code" updates="constant" name="startExpValue"/>
-        <Param val="" valType="code" updates="None" name="startFrameValue"/>
-        <Param val="" valType="code" updates="constant" name="startRoutineValue"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
-      </VariableComponent>
-      <CodeComponent name="random_position" plugin="None">
-        <Param val="import random" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="import * as random from 'random';&amp;#10;function random_position() {&amp;#10;    /*Generates a random x,y position for the&amp;#10;    center of a target such that no part of&amp;#10;    the target will ever overlap a corner tag&amp;#10;    */&amp;#10;    return [((Math.random.random() - 0.5) * (((16 / 9) - target_size) - (2 * tag_size))), ((Math.random.random() - 0.5) * ((1.0 - target_size) - (2 * tag_size)))];&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="def random_position():&amp;#10;    &quot;&quot;&quot; Generates a random x,y position for the&amp;#10;          center of a target such that no part of&amp;#10;          the target will ever overlap a corner tag&amp;#10;    &quot;&quot;&quot;&amp;#10;    return (&amp;#10;        (random.random()-0.5) * (16/9 - target_size - 2*tag_size),&amp;#10;        (random.random()-0.5) * (1.0 - target_size - 2*tag_size),&amp;#10;    )&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Py" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="random_position" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <EyetrackerRecordComponent name="Start_Recording" plugin="None">
+      <EyetrackerRecordComponent name="start_recording" plugin="None">
         <Param val="Start Only" valType="str" updates="None" name="actionType"/>
-        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="Start_Recording" valType="code" updates="None" name="name"/>
+        <Param val="start_recording" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="0.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="constant" name="stopWithRoutine"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </EyetrackerRecordComponent>
+      <TextComponent name="text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
-      </EyetrackerRecordComponent>
+        <Param val="3" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Get ready..." valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
     </Routine>
     <Routine name="Trial">
       <RoutineSettingsComponent name="Trial" plugin="None">
@@ -250,6 +207,7 @@
         <Param val="" valType="str" updates="constant" name="desc"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
         <Param val="Trial" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
@@ -262,6 +220,7 @@
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="1.0000, 1.0000, 1.0000" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
@@ -271,7 +230,7 @@
         <Param val="distractor_00" valType="code" updates="None" name="name"/>
         <Param val="1" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="random_position()" valType="list" updates="constant" name="pos"/>
+        <Param val="(random()-.5)*1.2, (random()-.5)*0.6" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="circle" valType="str" updates="None" name="shape"/>
         <Param val=".1, .1" valType="list" updates="constant" name="size"/>
@@ -290,6 +249,7 @@
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="1.0000, 1.0000, 1.0000" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
@@ -299,7 +259,7 @@
         <Param val="distractor_01" valType="code" updates="None" name="name"/>
         <Param val="1" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="random_position()" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="(random()-.5)*1.2, (random()-.5)*0.6" valType="list" updates="set every repeat" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="circle" valType="str" updates="None" name="shape"/>
         <Param val=".1, .1" valType="list" updates="constant" name="size"/>
@@ -318,6 +278,7 @@
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="1.0000, 1.0000, 1.0000" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
@@ -327,7 +288,7 @@
         <Param val="distractor_02" valType="code" updates="None" name="name"/>
         <Param val="1" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="random_position()" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="(random()-.5)*1.2, (random()-.5)*0.6" valType="list" updates="set every repeat" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="circle" valType="str" updates="None" name="shape"/>
         <Param val=".1, .1" valType="list" updates="constant" name="size"/>
@@ -346,6 +307,7 @@
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="-1.0000, -1.0000, 1.0000" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
@@ -355,10 +317,10 @@
         <Param val="target" valType="code" updates="None" name="name"/>
         <Param val="1" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="random_position()" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="(random()-.5)*1.2, (random()-.5)*0.6" valType="list" updates="set every repeat" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="circle" valType="str" updates="None" name="shape"/>
-        <Param val="target_size, target_size" valType="list" updates="constant" name="size"/>
+        <Param val=".1, .1" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="1" valType="code" updates="None" name="startVal"/>
@@ -373,6 +335,7 @@
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="False" valType="bool" updates="None" name="debug"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="look at" valType="str" updates="None" name="endRoutineOn"/>
         <Param val="0.5" valType="num" updates="None" name="lookDur"/>
@@ -383,7 +346,7 @@
         <Param val="every look" valType="str" updates="None" name="save"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="circle" valType="str" updates="None" name="shape"/>
-        <Param val="target_size, target_size" valType="list" updates="constant" name="size"/>
+        <Param val="target.size" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="1" valType="code" updates="None" name="startVal"/>
@@ -395,24 +358,25 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </RegionOfInterestComponent>
-      <PolygonComponent name="gaze_indicator" plugin="None">
+      <PolygonComponent name="gaze_indicator_1" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
         <Param val="0.0000, 0.0000, 0.0000" valType="color" updates="constant" name="lineColor"/>
         <Param val="1" valType="num" updates="constant" name="lineWidth"/>
         <Param val="4" valType="int" updates="constant" name="nVertices"/>
-        <Param val="gaze_indicator" valType="code" updates="None" name="name"/>
+        <Param val="gaze_indicator_1" valType="code" updates="None" name="name"/>
         <Param val=".5" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="eyetracker.getPosition()" valType="list" updates="set every frame" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="circle" valType="str" updates="None" name="shape"/>
-        <Param val=".05, .05" valType="list" updates="constant" name="size"/>
+        <Param val=".1, .1" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0" valType="code" updates="None" name="startVal"/>
@@ -423,85 +387,32 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
-      <AprilTagComponent name="tag_0" plugin="psychopy-eyetracker-pupil-labs">
-        <Param val="top-left" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
+      <AprilTagFrameComponent name="tag_frame_trial" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="0" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_0" valType="code" updates="None" name="name"/>
-        <Param val="-window_aspect/2, 0.5" valType="list" updates="constant" name="pos"/>
+        <Param val="3" valType="int" updates="constant" name="h_count"/>
+        <Param val="" valType="str" updates="constant" name="marker_ids"/>
+        <Param val="0.125" valType="int" updates="constant" name="marker_size"/>
+        <Param val="from exp settings" valType="str" updates="None" name="marker_units"/>
+        <Param val="tag_frame_trial" valType="code" updates="None" name="name"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
+        <Param val="[2, 2]" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
+        <Param val="3" valType="int" updates="constant" name="v_count"/>
         <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
-      <AprilTagComponent name="tag_1" plugin="psychopy-eyetracker-pupil-labs">
-        <Param val="top-right" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="1" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_1" valType="code" updates="None" name="name"/>
-        <Param val="window_aspect/2, 0.5" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
-      <AprilTagComponent name="tag_2" plugin="psychopy-eyetracker-pupil-labs">
-        <Param val="bottom-right" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="2" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_2" valType="code" updates="None" name="name"/>
-        <Param val="window_aspect/2, -0.5" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
-      <AprilTagComponent name="tag_3" plugin="psychopy-eyetracker-pupil-labs">
-        <Param val="bottom-left" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="3" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_3" valType="code" updates="None" name="name"/>
-        <Param val="-window_aspect/2, -.5" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
+      </AprilTagFrameComponent>
     </Routine>
-    <Routine name="Pre_trial_Fixate">
-      <RoutineSettingsComponent name="Pre_trial_Fixate" plugin="None">
+    <Routine name="Subject_Ready">
+      <RoutineSettingsComponent name="Subject_Ready" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
         <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
@@ -509,31 +420,33 @@
         <Param val="" valType="str" updates="constant" name="desc"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="Pre_trial_Fixate" valType="code" updates="None" name="name"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Subject_Ready" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
-      <PolygonComponent name="Fixation_Cross" plugin="None">
+      <PolygonComponent name="fixation_cross" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="white" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
         <Param val="white" valType="color" updates="constant" name="lineColor"/>
         <Param val="1" valType="num" updates="constant" name="lineWidth"/>
         <Param val="4" valType="int" updates="constant" name="nVertices"/>
-        <Param val="Fixation_Cross" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="fixation_cross" valType="code" updates="None" name="name"/>
+        <Param val="1" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="cross" valType="str" updates="None" name="shape"/>
-        <Param val=".05, .05" valType="list" updates="constant" name="size"/>
+        <Param val=".1, .1" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="1" valType="code" updates="None" name="startVal"/>
@@ -544,15 +457,16 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
-      <RegionOfInterestComponent name="Fixation_AOI" plugin="None">
+      <RegionOfInterestComponent name="fixation_aoi" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="False" valType="bool" updates="None" name="debug"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="look at" valType="str" updates="None" name="endRoutineOn"/>
         <Param val="0.5" valType="num" updates="None" name="lookDur"/>
         <Param val="4" valType="int" updates="constant" name="nVertices"/>
-        <Param val="Fixation_AOI" valType="code" updates="None" name="name"/>
+        <Param val="fixation_aoi" valType="code" updates="None" name="name"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="every look" valType="str" updates="None" name="save"/>
@@ -570,24 +484,25 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </RegionOfInterestComponent>
-      <PolygonComponent name="gaze_indicator_pre" plugin="None">
+      <PolygonComponent name="gaze_indicator_0" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
         <Param val="0.0000, 0.0000, 0.0000" valType="color" updates="constant" name="lineColor"/>
         <Param val="1" valType="num" updates="constant" name="lineWidth"/>
         <Param val="4" valType="int" updates="constant" name="nVertices"/>
-        <Param val="gaze_indicator_pre" valType="code" updates="None" name="name"/>
+        <Param val="gaze_indicator_0" valType="code" updates="None" name="name"/>
         <Param val=".5" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="eyetracker.getPosition()" valType="list" updates="set every frame" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="circle" valType="str" updates="None" name="shape"/>
-        <Param val=".05, .05" valType="list" updates="constant" name="size"/>
+        <Param val=".1, .1" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0" valType="code" updates="None" name="startVal"/>
@@ -598,82 +513,29 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
-      <AprilTagComponent name="tag_0_pre" plugin="None">
-        <Param val="top-left" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
+      <AprilTagFrameComponent name="tag_frame_ready" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="0" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_0_pre" valType="code" updates="None" name="name"/>
-        <Param val="-window_aspect/2, .5" valType="list" updates="constant" name="pos"/>
+        <Param val="3" valType="int" updates="constant" name="h_count"/>
+        <Param val="" valType="str" updates="constant" name="marker_ids"/>
+        <Param val="0.125" valType="int" updates="constant" name="marker_size"/>
+        <Param val="from exp settings" valType="str" updates="None" name="marker_units"/>
+        <Param val="tag_frame_ready" valType="code" updates="None" name="name"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
+        <Param val="[2, 2]" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
+        <Param val="3" valType="int" updates="constant" name="v_count"/>
         <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
-      <AprilTagComponent name="tag_1_pre" plugin="None">
-        <Param val="top-right" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="1" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_1_pre" valType="code" updates="None" name="name"/>
-        <Param val="window_aspect/2, 0.5" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
-      <AprilTagComponent name="tag_2_pre" plugin="None">
-        <Param val="bottom-right" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="2" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_2_pre" valType="code" updates="None" name="name"/>
-        <Param val="window_aspect/2, -0.5" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
-      <AprilTagComponent name="tag_3_pre" plugin="None">
-        <Param val="bottom-left" valType="str" updates="constant" name="anchor"/>
-        <Param val=".5" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="3" valType="int" updates="constant" name="marker_id"/>
-        <Param val="tag_3_pre" valType="code" updates="None" name="name"/>
-        <Param val="-window_aspect/2, -0.5" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="tag_size, tag_size" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-      </AprilTagComponent>
+      </AprilTagFrameComponent>
     </Routine>
   </Routines>
   <Flow>
@@ -685,11 +547,11 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="5" valType="num"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
       <Param name="name" updates="None" val="Trial_Loop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
-    <Routine name="Pre_trial_Fixate"/>
+    <Routine name="Subject_Ready"/>
     <Routine name="Trial"/>
     <LoopTerminator name="Trial_Loop"/>
     <Routine name="Cleanup"/>
