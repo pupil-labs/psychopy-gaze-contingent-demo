@@ -17,7 +17,7 @@
     <Param val="[]" valType="list" updates="None" name="Resources"/>
     <Param val="False" valType="bool" updates="None" name="Save csv file"/>
     <Param val="False" valType="bool" updates="None" name="Save excel file"/>
-    <Param val="False" valType="bool" updates="None" name="Save hdf5 file"/>
+    <Param val="True" valType="bool" updates="None" name="Save hdf5 file"/>
     <Param val="True" valType="bool" updates="None" name="Save log file"/>
     <Param val="True" valType="bool" updates="None" name="Save psydat file"/>
     <Param val="False" valType="bool" updates="None" name="Save wide csv file"/>
@@ -215,6 +215,20 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
+      <NeonEventComponent name="trialStartEvent" plugin="None">
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="trial-started" valType="str" updates="constant" name="event_name"/>
+        <Param val="trialStartEvent" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="1.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="0" valType="int" updates="constant" name="timestamp_ns"/>
+      </NeonEventComponent>
       <PolygonComponent name="distractor_00" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
@@ -387,16 +401,16 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
-      <AprilTagFrameComponent name="tag_frame_trial" plugin="None">
+      <AprilTagFrameComponent name="tagFrame_2" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="3" valType="int" updates="constant" name="h_count"/>
+        <Param val="4" valType="int" updates="constant" name="h_count"/>
         <Param val="" valType="str" updates="constant" name="marker_ids"/>
         <Param val="0.125" valType="int" updates="constant" name="marker_size"/>
         <Param val="from exp settings" valType="str" updates="None" name="marker_units"/>
-        <Param val="tag_frame_trial" valType="code" updates="None" name="name"/>
+        <Param val="tagFrame_2" valType="code" updates="None" name="name"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="[2, 2]" valType="list" updates="constant" name="size"/>
@@ -411,8 +425,8 @@
         <Param val="" valType="code" updates="None" name="validator"/>
       </AprilTagFrameComponent>
     </Routine>
-    <Routine name="Subject_Ready">
-      <RoutineSettingsComponent name="Subject_Ready" plugin="None">
+    <Routine name="SubjectReady">
+      <RoutineSettingsComponent name="SubjectReady" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
         <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
@@ -421,7 +435,7 @@
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
-        <Param val="Subject_Ready" valType="code" updates="None" name="name"/>
+        <Param val="SubjectReady" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
@@ -513,16 +527,16 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
-      <AprilTagFrameComponent name="tag_frame_ready" plugin="None">
+      <AprilTagFrameComponent name="tagFrame" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="3" valType="int" updates="constant" name="h_count"/>
+        <Param val="4" valType="int" updates="constant" name="h_count"/>
         <Param val="" valType="str" updates="constant" name="marker_ids"/>
         <Param val="0.125" valType="int" updates="constant" name="marker_size"/>
         <Param val="from exp settings" valType="str" updates="None" name="marker_units"/>
-        <Param val="tag_frame_ready" valType="code" updates="None" name="name"/>
+        <Param val="tagFrame" valType="code" updates="None" name="name"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="[2, 2]" valType="list" updates="constant" name="size"/>
@@ -540,20 +554,20 @@
   </Routines>
   <Flow>
     <Routine name="Init"/>
-    <LoopInitiator loopType="TrialHandler" name="Trial_Loop">
+    <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
       <Param name="conditionsFile" updates="None" val="" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="5" valType="num"/>
-      <Param name="name" updates="None" val="Trial_Loop" valType="code"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="3" valType="num"/>
+      <Param name="name" updates="None" val="trials" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
-    <Routine name="Subject_Ready"/>
+    <Routine name="SubjectReady"/>
     <Routine name="Trial"/>
-    <LoopTerminator name="Trial_Loop"/>
+    <LoopTerminator name="trials"/>
     <Routine name="Cleanup"/>
   </Flow>
 </PsychoPy2experiment>
