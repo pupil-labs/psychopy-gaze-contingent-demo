@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+﻿<?xml version="1.0" ?>
 <PsychoPy2experiment encoding="utf-8" version="2024.2.1">
   <Settings>
     <Param val="0" valType="str" updates="None" name="Audio latency priority"/>
@@ -215,7 +215,7 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
-      <NeonEventComponent name="trialStartEvent" plugin="None">
+      <PLEventComponent name="trialStartEvent" plugin="None">
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="trial-started" valType="str" updates="constant" name="event_name"/>
@@ -228,7 +228,7 @@
         <Param val="1.0" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="0" valType="int" updates="constant" name="timestamp_ns"/>
-      </NeonEventComponent>
+      </PLEventComponent>
       <PolygonComponent name="distractor_00" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
